@@ -1,5 +1,6 @@
 const sequelize = require('../config/database')
 const Users = require('./users')
+const Shoes = require('./shoes')
 
 
 sequelize.sync({ alter: true })
@@ -7,5 +8,6 @@ sequelize.sync({ alter: true })
     .catch((error) => console.error('Erro ao sincronizar tabelas', error))
 
 module.exports = {
-    Users
+    Users,
+    Shoes
 }
