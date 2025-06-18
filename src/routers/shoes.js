@@ -14,4 +14,14 @@ router.get(
     shoesController.getAllShoes
 )
 
+router.delete(
+    '/shoes/:id',
+    shoesController.deleteShoes
+    
+)
+router.put(
+    '/shoes/:id',
+    shoesController.updateShoes
+)
+
 module.exports = router;
