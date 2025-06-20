@@ -15,7 +15,8 @@ async function createShoes(req,res){
 async function getAllShoes(req, res) {
     try {
         const shoes = await Shoes.findAll()
-        return res.status(200).send('Lista de shoes criadas com sucesso')
+        return res.status(200)
+        .send('Lista de shoes criadas com sucesso')
     } catch (error) {
         console.error(error)
         return res.status(500).send({
