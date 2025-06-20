@@ -9,4 +9,19 @@ router.post(
     usersController.createUser
 )
 
+router.get(
+    '/users',
+    usersController.getUsers
+)
+
+router.put(
+    '/users/:id',
+    usersController.updateUser
+)
+
+router.delete(
+    '/users/:id',
+    usersController.deleteUser
+)
+
 module.exports = router;

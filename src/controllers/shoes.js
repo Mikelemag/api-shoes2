@@ -3,24 +3,23 @@ const { Shoes } = require('../models')
 async function createShoes(req,res){
     try {
         await Shoes.create(req.body)
-        return res.status(201).send('Novo modelo criado com sucesso')
+        return res.status(201).send('Novo modelo de sapato criado com sucesso')
         } catch (error) {
         console.error(error)
-        return res.status(500).send({
-            error: error.message
-        })
+        return res.status(500)
+        .send('Erro ao criar novo modelo')
     }
 }
 
 async function getAllShoes(req, res) {
     try {
         const shoes = await Shoes.findAll()
-        return res.status(200).send('Lista de shoes criadas com sucesso')
+        return res.status(200).send(shoes)
     } catch (error) {
         console.error(error)
-        return res.status(500).send({
-            error: error.message
-        })
+        return res.status(500)
+        .send('Erro ao buscar modelos')
+        
     }
 }
 
